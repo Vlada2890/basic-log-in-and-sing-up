@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #e6f7ff; /* Pastelowy niebieski */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #a3d9ff; /* Ciemniejszy pastelowy niebieski */
+            text-align: center;
+        }
+        form {
+            background-color: #f0f8ff; /* Bardzo jasny pastelowy niebieski */
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #b3e6ff; /* Jasny pastelowy niebieski */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #66ccff; /* Jeszcze ciemniejszy pastelowy niebieski */
+        }
+        p {
+            text-align: center;
+            color: #333;
+        }
+        a {
+            color: #66ccff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to your Diary</h1>
+    <h2>Login</h2>
+    <form method="post" action="{% url 'dairy' %}">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
+</body>
+</html>
